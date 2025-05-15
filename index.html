@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Open When</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .background-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 200%;
+      overflow: hidden;
+      z-index: 1;
+      animation: moveBackground 30s linear infinite;
+    }
+
+    .image-set {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    .background-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      aspect-ratio: 1 / 1;
+    }
+
+    @keyframes moveBackground {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+
+    .center-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      animation: pulse 2s infinite;
+    }
+
+    .center-button a {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      color: white;
+      text-decoration: none;
+      padding: 1.5rem 3rem;
+      border-radius: 16px;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, background 0.3s ease;
+      display: inline-block;
+    }
+
+    .center-button a:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Grid with duplicated image sets -->
+  <div class="background-grid" id="backgroundGrid">
+    <div class="image-set" id="imageSet">
+      <!-- Your images go here -->
+      <!-- Example: -->
+      <img src="images/photo_2025-05-15_19-56-20 (2).jpg" alt="Background 1" />
+    <img src="images/photo_2025-05-15_19-56-20.jpg" alt="Background 2" />
+    <img src="images/photo_2025-05-15_19-56-21.jpg" alt="Background 3" />
+    <img src="images/photo_2025-05-15_19-56-22.jpg" alt="Background 4" />
+    <img src="images/photo_2025-05-15_19-56-23 (2).jpg" alt="Background 5" />
+    <img src="images/photo_2025-05-15_19-56-23.jpg" alt="Background 6" />
+    <img src="images/photo_2025-05-15_19-56-24.jpg" alt="Background 7" />
+    <img src="images/photo_2025-05-15_19-56-25.jpg" alt="Background 8" />
+    <img src="images/photo_2025-05-15_19-56-26.jpg" alt="Background 9" />
+    <img src="images/photo_2025-05-15_19-56-27 (2).jpg" alt="Background 10" />
+    <img src="images/photo_2025-05-15_19-56-27.jpg" alt="Background 11" />
+    <img src="images/photo_2025-05-15_19-56-28.jpg" alt="Background 12" />
+    <img src="images/photo_2025-05-15_19-56-29.jpg" alt="Background 13" />
+    <img src="images/photo_2025-05-15_19-56-30 (2).jpg" alt="Background 14" />
+    <img src="images/photo_2025-05-15_19-56-30.jpg" alt="Background 15" />
+    <img src="images/photo_2025-05-15_19-56-31.jpg" alt="Background 16" />
+    <img src="images/photo_2025-05-15_19-56-32.jpg" alt="Background 17" />
+    <img src="images/photo_2025-05-15_19-56-33 (2).jpg" alt="Background 18" />
+    <img src="images/photo_2025-05-15_19-56-33.jpg" alt="Background 19" />
+    <img src="images/photo_2025-05-15_19-56-35.jpg" alt="Background 20" />
+    <img src="images/photo_2025-05-15_19-56-36.jpg" alt="Background 21" />
+    <img src="images/photo_2025-05-15_19-56-37.jpg" alt="Background 22" />
+    <img src="images/photo_2025-05-15_19-56-38 (2).jpg" alt="Background 23" />
+    <img src="images/photo_2025-05-15_19-56-38.jpg" alt="Background 24" />
+    <img src="images/photo_2025-05-15_19-56-39.jpg" alt="Background 25" />
+    <img src="images/photo_2025-05-15_19-56-40.jpg" alt="Background 26" />
+    <img src="images/photo_2025-05-15_19-56-41.jpg" alt="Background 27" />
+    <img src="images/photo_2025-05-15_19-56-42.jpg" alt="Background 28" />
+    <img src="images/photo_2025-05-15_19-56-43.jpg" alt="Background 29" />
+    <img src="images/photo_2025-05-15_19-56-44 (2).jpg" alt="Background 30" />
+    <img src="images/photo_2025-05-15_19-56-44.jpg" alt="Background 31" />
+    <img src="images/photo_2025-05-15_19-56-45.jpg" alt="Background 32" />
+    <img src="images/photo_2025-05-15_19-56-46.jpg" alt="Background 33" />
+    <img src="images/photo_2025-05-15_19-56-47 (2).jpg" alt="Background 34" />
+    <img src="images/photo_2025-05-15_19-56-47.jpg" alt="Background 35" />
+    <img src="images/photo_2025-05-15_19-56-48.jpg" alt="Background 36" />
+    <img src="images/photo_2025-05-15_19-56-49.jpg" alt="Background 37" />
+    <img src="images/photo_2025-05-15_19-56-50 (2).jpg" alt="Background 38" />
+    <img src="images/photo_2025-05-15_19-56-50.jpg" alt="Background 39" />
+    <img src="images/photo_2025-05-15_19-56-51.jpg" alt="Background 40" />
+    <img src="images/photo_2025-05-15_19-56-52.jpg" alt="Background 41" />
+    <img src="images/photo_2025-05-15_19-56-53.jpg" alt="Background 42" />
+    <img src="images/photo_2025-05-15_19-56-54 (2).jpg" alt="Background 43" />
+    <img src="images/photo_2025-05-15_19-56-54.jpg" alt="Background 44" />
+    <img src="images/photo_2025-05-15_19-56-55.jpg" alt="Background 45" />
+    <img src="images/photo_2025-05-15_19-56-56.jpg" alt="Background 46" />
+    <img src="images/photo_2025-05-15_19-56-57.jpg" alt="Background 47" />
+    <img src="images/photo_2025-05-15_19-56-58 (2).jpg" alt="Background 48" />
+    <img src="images/photo_2025-05-15_19-56-58.jpg" alt="Background 49" />
+    <img src="images/photo_2025-05-15_19-56-59.jpg" alt="Background 50" />
+    <img src="images/photo_2025-05-15_19-57-00.jpg" alt="Background 51" />
+    <img src="images/photo_2025-05-15_19-57-01 (2).jpg" alt="Background 52" />
+    <img src="images/photo_2025-05-15_19-57-01.jpg" alt="Background 53" />
+    <img src="images/photo_2025-05-15_19-57-03.jpg" alt="Background 54" />
+    <img src="images/photo_2025-05-15_19-57-04.jpg" alt="Background 55" />
+    <img src="images/photo_2025-05-15_19-57-05.jpg" alt="Background 56" />
+    <img src="images/photo_2025-05-15_19-57-06.jpg" alt="Background 57" />
+    <img src="images/photo_2025-05-15_19-57-07.jpg" alt="Background 58" />
+    <img src="images/photo_2025-05-15_19-56-30 (2).jpg" alt="Background 59" />
+    <img src="images/photo_2025-05-15_19-56-54.jpg" alt="Background 60" />
+    </div>
+    <div class="image-set" id="imageSetClone"></div>
+  </div>
+
+  <!-- Center Open Button -->
+  <div class="center-button">
+    <a href="lanz.html">Open</a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const originalSet = document.getElementById("imageSet");
+      const cloneSet = document.getElementById("imageSetClone");
+  
+      const images = Array.from(originalSet.children);
+  
+      // Shuffle original images
+      for (let i = images.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [images[i], images[j]] = [images[j], images[i]];
+      }
+  
+      // Replace original with shuffled order
+      originalSet.innerHTML = "";
+      images.forEach(img => originalSet.appendChild(img));
+  
+      // Repeat shuffled images 100 times in the clone set
+      for (let repeat = 0; repeat < 100; repeat++) {
+        images.forEach(img => {
+          const clone = img.cloneNode(true);
+          cloneSet.appendChild(clone);
+        });
+      }
+    });
+  </script>
+  
+</body>
+</html>
+
+

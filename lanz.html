@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Open When Letters</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  :root {
+    --color-primary: #1e3a8a;
+    --color-primary-light: #3b82f6;
+    --color-primary-dark: #142e72;
+    --color-bg: #e0e7ff;
+    --color-button-bg: white;
+    --color-button-text: var(--color-primary-dark);
+    --color-button-hover-bg: var(--color-primary-light);
+    --color-button-hover-text: white;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-primary-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+  }
+
+  header p {
+    font-weight: 400;
+    color: var(--color-primary-dark);
+    margin-top: 0.3rem;
+    font-size: 0.95rem;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .button-list {
+    display: grid;
+    grid-template-columns: 1fr; /* One column layout */
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  button.sentence-button {
+    background: var(--color-button-bg);
+    border: 2px solid var(--color-primary);
+    color: var(--color-button-text);
+    padding: 0.7rem 0.6rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  button.sentence-button:hover,
+  button.sentence-button:focus {
+    background: var(--color-button-hover-bg);
+    color: var(--color-button-hover-text);
+    outline: none;
+  }
+
+  button.sentence-button:active {
+    transform: scale(0.97);
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: transparent;
+    margin: auto;
+    padding: 0;
+    border: none;
+    width: 80%;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background: transparent;
+  }
+
+  #closeModal {
+    display: block;
+    margin: 10px auto;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #closeModal:hover {
+    background-color: var(--color-primary-light);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Open When Letters</h1>
+  <p>Click a button to open a letter and watch a video</p>
+</header>
+
+<main>
+  <div class="button-list" role="list">
+    <button class="sentence-button" data-video="videos/IMG_2341.MOV">Open when you get this</button>
+      <button class="sentence-button" data-video="videos/firstvid.mp4">Open when you're done with the first vid</button>
+      <button class="sentence-button" data-video="videos/miss.mov">Open when you miss me</button>
+      <button class="sentence-button" data-video="videos/sick.mp4">Open when you're sick</button>
+      <button class="sentence-button" data-video="videos/happy.mov">Open when you're happy</button>
+      <button class="sentence-button" data-video="videos/tired.mp4">Open when you're tired</button>
+      <button class="sentence-button" data-video="videos/how much i lve you.mov">Open when you need to know how much i love you</button>
+      <button class="sentence-button" data-video="videos/bad day.mp4">Open when you're having a bad day</button>
+      <button class="sentence-button" data-video="videos/birthday.mp4">Open when it's your birthday</button>
+      <button class="sentence-button" data-video="videos/overeacting.mov">Open when you're overthinking</button>
+      <button class="sentence-button" data-video="videos/motivation.mov">Open when you need motivation</button>
+      <button class="sentence-button" data-video="videos/insecure.mov">Open when you feel insecure</button>
+      <button class="sentence-button" data-video="videos/kiss and hug.mov">Open when you need a kiss and hug</button>
+      <button class="sentence-button" data-video="videos/story.mov">Open when you want to hear a story</button>
+      <button class="sentence-button" data-video="videos/give up.mov">Open when you feel like giving up on us</button>
+      <button class="sentence-button" data-video="videos/lonely.mov">Open when you feel lonely</button>
+      <button class="sentence-button" data-video="videos/stressed out.mp4">Open when you're stressed out</button>
+      <button class="sentence-button" data-video="videos/future.mov">Open when you're thinking of our future</button>
+      <button class="sentence-button" data-video="videos/cant sleep.mov">Open when you can't sleep</button>
+      <button class="sentence-button" data-video="videos/sad.mp4">Open when you're sad</button>
+      <button class="sentence-button" data-video="videos/argue.mov">Open when we argue</button>
+    </div>
+
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <video controls playsinline id="videoPlayer" src="" type="video/mp4"></video>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('.sentence-button');
+  const videoModal = document.getElementById('videoModal');
+  const videoPlayer = document.getElementById('videoPlayer');
+  const closeModal = document.getElementById('closeModal');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const videoSrc = button.getAttribute('data-video');
+      if (!videoSrc) return;
+
+      videoPlayer.src = videoSrc;
+      videoPlayer.load();
+      videoPlayer.play();
+      videoModal.style.display = 'flex';
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    videoPlayer.pause();
+    videoPlayer.src = '';
+    videoModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === videoModal) {
+      closeModal.click();
+    }
+  });
+</script>
+</body>
+</html>
